@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 #include <array>
-#include <stdlib.h>
+#include <cstdlib>
 #include <ctime>
 #include <chrono>
 
