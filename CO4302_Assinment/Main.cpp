@@ -73,6 +73,20 @@ int main ()
     SetUp (r_Circles);
     auto timeEnd = std::chrono::high_resolution_clock::now ();
 
+    std::cout << "Generated " << k_CircleCount << " circles in " << std::chrono::duration_cast<std::chrono::TIME_RES>(timeEnd - timeStart).count () << TIME_STR << "\n";
+
+
+    auto timeLast = std::chrono::high_resolution_clock::now ();
+    while (true)
+    {
+        auto timeNow = std::chrono::high_resolution_clock::now ();
+        if (std::chrono::duration_cast<std::chrono::seconds>(timeNow - timeLast).count () >= 1.0f)
+        {
+            std::cout << "Laser show \n\n";
+            timeLast = std::chrono::high_resolution_clock::now ();
+        }
+    }
+
     std::cout << "Programmed finished in " << std::chrono::duration_cast<std::chrono::TIME_RES>(timeEnd - timeBegin).count () <<
         TIME_STR << "\nThe circle generation itself took " << std::chrono::duration_cast<std::chrono::TIME_RES>(timeEnd - timeStart).count () <<
         TIME_STR << "\n";
